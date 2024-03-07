@@ -5,25 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sound Page</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
         .big-button {
             width: 200px;
             height: 200px;
-            background-color: red;
-            border: none;
+            background-color: #ff3333; /* Rode kleur */
+            border: 5px solid #ffffff; /* Witte rand */
             border-radius: 50%;
-            font-size: 24px;
-            color: white;
             cursor: pointer;
+            outline: none; /* Verwijder de focus outline */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Schaduw */
+            transition: transform 0.2s ease; /* Soepele animatie */
+        }
+
+        .big-button:hover {
+            transform: scale(1.1); /* Maak de knop iets groter bij hover */
         }
     </style>
 </head>
 <body>
-    <button class="big-button" onclick="playSound()">Play Sound</button>
+    <button class="big-button" onclick="playSound()" aria-label="Play Sound"></button>
 
     <script>
         function playSound() {
             var audio = new Audio('sound.mp3');
-            audio.volume = 7; // 500% volume
+            audio.volume = 1; // Reset volume naar standaard (0-1 bereik)
             audio.play();
         }
     </script>
