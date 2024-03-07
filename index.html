@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niet Schelden</title>
+    <title>Sound Page</title>
+    <style>
+        .big-button {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <button class="big-button" onclick="playSound()">Play Sound</button>
+
     <script>
-        window.onload = function() {
+        function playSound() {
             var audio = new Audio('sound.mp3');
             audio.volume = 7; // 500% volume
             audio.play();
-        };
+        }
     </script>
 </body>
 </html>
